@@ -15,7 +15,7 @@
 
   home-manager.users.sshyam = {
     imports = [
-      ../../home/home.nix
+      ./home.nix
     ];
   };
 
