@@ -115,8 +115,40 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+  wget
+  citrix_workspace
+  usbutils
+  vim
+  fprintd
   ];
+
+  # Citrix Workspace Stuff
+  nixpkgs.config.citrix_workspace = {
+    sha256 = "06hdwi5rd8z43nlpvym6yrw3snfz8jh6ic3g4pihn9ji22bw5pbd";
+  };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
+  #local Send
+  networking.firewall.enable = true;
+
+  # LocalSend: discovery (UDP) + transfer (TCP) use port 53317
+  networking.firewall.allowedTCPPorts = [ 53317 ];
+  networking.firewall.allowedUDPPorts = [ 53317 ];
+
+
+  #finger print stuff
+  services.fprintd.enable = true;
+
+  # security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.polkit-1.fprintAuth = true;
+  services.dbus.enable = true;
+
+  environment.variables.SSL_CERT_FILE =
+    "/etc/ssl/certs/ca-bundle.crt";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
