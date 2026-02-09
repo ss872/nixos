@@ -3,10 +3,7 @@
 {
   home.stateVersion = "25.11"; # match your NixOS version
 
-  home.packages = with pkgs; [
-    neovim
-    localsend
-  ];
+  home.packages = with pkgs; [ ];
 
   programs.home-manager.enable = true;
 
@@ -14,5 +11,8 @@
     ../../home/packages/git.nix
     ../../home/packages/github.nix
     ../../home/packages/ssh.nix
+    ../../home/packages/localsend.nix
+    ../../home/packages/neovim.nix
+
   ];
 }
