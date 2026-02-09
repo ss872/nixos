@@ -1,14 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  # Enable the X11 windowing system.
+  # Display manager stack (GDM) for Wayland sessions.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
+
+  # GNOME desktop.
   services.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
+  # Niri Wayland compositor.
+  programs.niri.enable = true;
+  services.displayManager.sessionPackages = [ pkgs.niri ];
+
+  # Configure keymap
   services.xserver.xkb = {
     layout = "us";
     variant = "";
