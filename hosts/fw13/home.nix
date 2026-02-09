@@ -11,8 +11,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/modules/git.nix
-    ../../home/modules/github.nix
-    ../../home/modules/ssh.nix
+    ../../home/packages/git.nix
+    ../../home/packages/github.nix
+    ../../home/packages/ssh.nix
   ];
 }
