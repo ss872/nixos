@@ -21,5 +21,6 @@
     ../../home/packages/fuzzel.nix
     ../../home/packages/swaylock.nix
     ../../home/packages/waybar.nix
+    ../../home/packages/niri.nix
   ];
 }
