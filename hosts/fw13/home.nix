@@ -3,7 +3,11 @@
 {
   home.stateVersion = "25.11"; # match your NixOS version
 
-  home.packages = with pkgs; [ ];
+  fonts.fontconfig.enable = true;
+
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   programs.home-manager.enable = true;
 
@@ -16,5 +20,6 @@
     ../../home/packages/alacritty.nix
     ../../home/packages/fuzzel.nix
     ../../home/packages/swaylock.nix
+    ../../home/packages/waybar.nix
   ];
 }

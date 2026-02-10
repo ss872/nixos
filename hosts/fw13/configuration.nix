@@ -27,6 +27,9 @@
     ];
   };
 
+  programs.fish.enable = true;
+  users.users.sshyam.shell = pkgs.fish;
+
   networking.hostName = "nixos"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
