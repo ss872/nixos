@@ -13,6 +13,8 @@
     ../../home/packages/ssh.nix
     ../../home/packages/localsend.nix
     ../../home/packages/neovim.nix
-
+    ../../home/packages/alacritty.nix
+    ../../home/packages/fuzzel.nix
+    ../../home/packages/swaylock.nix
   ];
 }
