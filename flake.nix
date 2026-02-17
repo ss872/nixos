@@ -20,7 +20,7 @@
         modules = [
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
           inputs.home-manager.nixosModules.home-manager
-          ./configuration.nix
+          ./hosts/fw13/configuration.nix
         ];
       };
     };

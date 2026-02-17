@@ -7,7 +7,7 @@
   ];
 
   xdg.configFile."niri" = {
-    source = ../system/niri;
+    source = ../.config/niri;
     recursive = true;
   };
 }

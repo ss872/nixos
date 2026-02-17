@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    chromium
   ];
 
   programs.home-manager.enable = true;

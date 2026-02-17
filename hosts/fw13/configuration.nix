@@ -13,7 +13,10 @@
     ../../os/core.nix
     ../../os/locale.nix
     ../../os/networking.nix
-    ../../os/desktop.nix
+    ../../os/desktop/gdm.nix
+    ../../os/desktop/gnome.nix
+    ../../os/desktop/common.nix
+    ../../os/desktop/niri.nix
     ../../os/audio.nix
     ../../os/users.nix
     ../../os/packages.nix
