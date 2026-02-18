@@ -11,6 +11,7 @@
 
     # Shared OS modules.
     ../../os/core.nix
+    ../../os/cleanup.nix
     ../../os/locale.nix
     ../../os/networking.nix
     ../../os/desktop/gdm.nix
