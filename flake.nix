@@ -15,7 +15,7 @@
     let
       system = "x86_64-linux";
     in {
-      nixosConfigurations.sshyam = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fw13 = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd

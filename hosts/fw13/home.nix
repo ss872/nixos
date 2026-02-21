@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, osConfig ? {}, ... }:
 
 {
   home.stateVersion = "25.11"; # match your NixOS version
@@ -19,9 +19,7 @@
     ../../home/packages/localsend.nix
     ../../home/packages/neovim.nix
     ../../home/packages/alacritty.nix
-    ../../home/packages/fuzzel.nix
-    ../../home/packages/swaylock.nix
-    ../../home/packages/waybar.nix
+  ] ++ lib.optionals (osConfig.programs.niri.enable or false) [
     ../../home/packages/niri.nix
   ];
 }

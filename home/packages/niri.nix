@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./fuzzel.nix
+    ./waybar.nix
+    ./swaylock.nix
+  ];
+
   home.packages = with pkgs; [
     wl-clipboard
     cliphist

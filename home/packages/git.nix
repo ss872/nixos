@@ -4,6 +4,27 @@
   programs.git = {
     enable = true;
 
+    aliases = {
+      s = "status";
+      sw = "switch";
+      swn = "switch -c";
+      co = "checkout";
+      cob = "checkout -b";
+      br = "branch";
+      branches = "branch -vv";
+      aa = "add -A";
+      ap = "add -p";
+      ci = "commit";
+      cm = "commit -m";
+      ca = "commit --amend";
+      can = "commit --amend --no-edit";
+      unstage = "restore --staged --";
+      last = "log -1 --stat";
+      lg = "log --oneline --graph --decorate --all";
+      sync = "!git fetch --prune && git pull --rebase --autostash";
+      root = "rev-parse --show-toplevel";
+    };
+
     settings = {
       user.email = "Shyamal Shah";
       user.name = "shah.shyamal.872@gmail.com";
