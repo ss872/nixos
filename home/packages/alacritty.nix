@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        size = 16.0;
+        size = 14.0;
         bold = {
           family = "JetBrainsMono Nerd Font";
           style = "Bold";
@@ -65,7 +65,6 @@
       };
       window = {
         decorations = "none";
-        startup_mode = "Maximized";
       };
     };
   };
