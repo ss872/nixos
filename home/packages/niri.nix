@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ./walker.nix
-    ./waybar.nix
-    ./swaylock.nix
+    ./fuzzel.nix
   ];
 
   home.packages = with pkgs; [

@@ -36,3 +36,8 @@ layout {
         color "#f9e2af80"
     }
 }
+
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}

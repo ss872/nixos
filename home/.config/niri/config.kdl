@@ -6,6 +6,7 @@ include "configs/window-rule.kdl"
 include "configs/input-device.kdl"
 
 spawn-at-startup "waybar"
+spawn-at-startup "noctalia-shell" "--no-duplicate"
 
 prefer-no-csd
 

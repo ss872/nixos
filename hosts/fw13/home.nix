@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   home-manager.users.sshyam = {
@@ -25,6 +25,8 @@
       ../../home/packages/alacritty.nix
     ] ++ lib.optionals (config.programs.niri.enable or false) [
       ../../home/packages/niri.nix
+      inputs.noctalia.homeModules.default
+      { programs.noctalia-shell.enable = true; }
     ];
   };
 }

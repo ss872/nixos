@@ -9,6 +9,10 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
