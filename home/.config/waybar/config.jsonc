@@ -59,6 +59,6 @@
     },
     "custom/launcher":{
         "format": "",
-        "on-click": "fuzzel"
+        "on-click": "walker"
     }
 }

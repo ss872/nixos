@@ -6,8 +6,5 @@
     isNormalUser = true;
     description = "Shyamal";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      vscode
-    ];
   };
 }

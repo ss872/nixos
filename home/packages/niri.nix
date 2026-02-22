@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./fuzzel.nix
+    ./walker.nix
     ./waybar.nix
     ./swaylock.nix
   ];

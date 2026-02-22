@@ -11,6 +11,7 @@
       nerd-fonts.symbols-only
       font-awesome
       chromium
+      vscode
     ];
 
     programs.home-manager.enable = true;
