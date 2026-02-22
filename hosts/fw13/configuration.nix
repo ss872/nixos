@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -23,13 +23,8 @@
     ../../os/packages.nix
     ../../os/security.nix
     ../../os/localsend-firewall.nix
+    ./home.nix
   ];
-
-  home-manager.users.sshyam = {
-    imports = [
-      ./home.nix
-    ];
-  };
 
   programs.fish.enable = true;
   users.users.sshyam.shell = pkgs.fish;
