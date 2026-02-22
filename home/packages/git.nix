@@ -5,8 +5,8 @@
     enable = true;
 
     settings = {
-      user.email = "Shyamal Shah";
-      user.name = "shah.shyamal.872@gmail.com";
+      user.name = "Shyamal Shah";
+      user.email = "shah.shyamal.872@gmail.com";
       init.defaultBranch = "main";
       fetch.prune = true;
       push.autoSetupRemote = true;
