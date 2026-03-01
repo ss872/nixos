@@ -26,10 +26,7 @@
     ./home.nix
   ];
 
-  programs.fish.enable = true;
-  users.users.sshyam.shell = pkgs.fish;
-
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "framework-nixos"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

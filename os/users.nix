@@ -6,5 +6,6 @@
     isNormalUser = true;
     description = "Shyamal";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
 }

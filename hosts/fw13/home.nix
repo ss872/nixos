@@ -11,10 +11,20 @@
       nerd-fonts.symbols-only
       font-awesome
       chromium
-      vscode
+      vscodium
+      vesktop
+      zoom-us
+      direnv
     ];
 
     programs.home-manager.enable = true;
+
+    dconf.settings = {
+      "org/gnome/mutter/wayland" = {
+        "xwayland-grab-access-rules" = [ "Wfica" ];
+        "xwayland-allow-grabs" = true;
+      };
+    };
 
     imports = [
       ../../home/packages/git.nix
