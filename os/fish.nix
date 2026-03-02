@@ -34,22 +34,17 @@
       gst = "git status";
       gsw = "git switch";
       gswc = "git switch -c";
-
-      nr = "sudo nixos-rebuild switch --flake /home/sshyam/nixos#fw13";
-      nrbt = "sudo nixos-rebuild boot --flake /home/sshyam/nixos#fw13";
-      nrtt = "sudo nixos-rebuild test --flake /home/sshyam/nixos#fw13";
-      nfu = "nix flake update /home/sshyam/nixos";
     };
     interactiveShellInit = ''
       set -g fish_greeting
 
-      function __nixos_rebuild_git --argument-names action
+      function __nixos_flake_target
         set -l repo /home/sshyam/nixos
         set -l host fw13
 
         argparse h/host= -- $argv
         or begin
-          echo "usage: nrs|nrb|nrt [--host <name>] <commit message>"
+          echo "usage: [command] [--host <name>]"
           return 1
         end
 
@@ -57,7 +52,17 @@
           set host $_flag_host
         end
 
-        set -l flake "$repo#$host"
+        echo "$repo#$host"
+      end
+
+      function __nixos_rebuild_git --argument-names action
+        set -l repo /home/sshyam/nixos
+        set -l flake (__nixos_flake_target $argv)
+        or begin
+          echo "usage: nrs|nrb|nrt [--host <name>] <commit message>"
+          return 1
+        end
+        set -l host (string split "#" $flake)[2]
 
         if not contains -- $action switch boot test
           echo "invalid action: $action"
@@ -93,6 +98,41 @@
 
       function nrt
         __nixos_rebuild_git test $argv
+      end
+
+      function nr
+        set -l flake (__nixos_flake_target $argv)
+        or begin
+          echo "usage: nr [--host <name>]"
+          return 1
+        end
+
+        sudo nixos-rebuild switch --flake $flake
+      end
+
+      function nrbt
+        set -l flake (__nixos_flake_target $argv)
+        or begin
+          echo "usage: nrbt [--host <name>]"
+          return 1
+        end
+
+        sudo nixos-rebuild boot --flake $flake
+      end
+
+      function nrtt
+        set -l flake (__nixos_flake_target $argv)
+        or begin
+          echo "usage: nrtt [--host <name>]"
+          return 1
+        end
+
+        sudo nixos-rebuild test --flake $flake
+      end
+
+      function nfu
+        set -l repo /home/sshyam/nixos
+        nix flake update $repo $argv
       end
     '';
   };
