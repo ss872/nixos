@@ -132,7 +132,12 @@
 
       function nfu
         set -l repo /home/sshyam/nixos
-        nix flake update $repo $argv
+
+        if test (count $argv) -eq 0
+          nix flake update --flake $repo
+        else
+          nix flake update --flake $repo $argv
+        end
       end
     '';
   };
