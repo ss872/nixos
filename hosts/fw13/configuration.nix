@@ -20,6 +20,7 @@
     ../../os/desktop/niri.nix
     ../../os/audio.nix
     ../../os/users.nix
+    ../../os/fish.nix
     ../../os/packages.nix
     ../../os/security.nix
     ../../os/localsend-firewall.nix
