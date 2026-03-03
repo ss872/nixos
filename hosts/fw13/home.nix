@@ -15,6 +15,7 @@
       vesktop
       zoom-us
       direnv
+      fastfetch
     ];
 
     programs.home-manager.enable = true;
@@ -33,6 +34,7 @@
       ../../home/packages/localsend.nix
       ../../home/packages/neovim.nix
       ../../home/packages/alacritty.nix
+      ../../home/packages/ghostty.nix
     ] ++ lib.optionals (config.programs.niri.enable or false) [
       ../../home/packages/niri.nix
     ];
