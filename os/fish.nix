@@ -37,7 +37,6 @@
     };
     interactiveShellInit = ''
       set -g fish_greeting
-      set -g fish_prompt_pwd_dir_length 2
 
       function __prompt_git_action
         set -l git_dir (command git rev-parse --git-dir 2>/dev/null)
@@ -156,7 +155,7 @@
 
       function fish_prompt
         set -l last_status $status
-        set -l cwd (prompt_pwd)
+        set -l cwd (string replace -r "^$HOME" "~" -- $PWD)
         set -l git_info (__prompt_git_summary)
 
         if test $last_status -ne 0
