@@ -104,7 +104,11 @@
           set parts $parts "stash"
         end
 
-        set -l upstream_counts (command git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null)
+        set -l upstream_counts (
+          command git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null \
+            | string replace -a \t " " \
+            | string split -n " "
+        )
         if test (count $upstream_counts) -eq 2
           set -l behind $upstream_counts[1]
           set -l ahead $upstream_counts[2]
@@ -126,7 +130,11 @@
       end
 
       function __prompt_format_duration --argument-names ms
-        if test -z "$ms" -o "$ms" -le 0
+        if test -z "$ms"
+          return
+        end
+
+        if test "$ms" -le 0
           return
         end
 
