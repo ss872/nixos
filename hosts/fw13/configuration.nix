@@ -14,8 +14,8 @@
     ../../os/cleanup.nix
     ../../os/locale.nix
     ../../os/networking.nix
-    ../../os/desktop/plm.nix
-    ../../os/desktop/kde.nix
+    ../../os/desktop/gdm.nix
+    ../../os/desktop/gnome.nix
     ../../os/desktop/common.nix
     ../../os/desktop/niri.nix
     ../../os/audio.nix
