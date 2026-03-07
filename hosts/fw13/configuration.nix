@@ -15,7 +15,7 @@
     ../../os/locale.nix
     ../../os/networking.nix
     ../../os/desktop/gdm.nix
-    ../../os/desktop/gnome.nix
+    ../../os/desktop/cosmic.nix
     ../../os/desktop/common.nix
     ../../os/desktop/niri.nix
     ../../os/audio.nix
